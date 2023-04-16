@@ -9,15 +9,13 @@ options= Options()
 #service.headless = True
 
 class TestWebsiteLoad(unittest.TestCase):
-    options.add_argument('--headless')
-
-    options.add_argument('--no-sandbox')
-
-    options.add_argument('--disable-dev-shm-usage')
-
+ 
 
     # Define a method to test website loading
     def test_load_website(self):
+        options.add_argument('--headless')
+        options.add_argument('--no-sandbox')
+        options.add_argument('--disable-dev-shm-usage')
         driver = webdriver.Chrome('/usr/bin/chromedriver', options=options) # Use any browser driver of your choice.
         driver.get("https://atg.world/")
         print(driver.title)
