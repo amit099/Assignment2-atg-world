@@ -6,7 +6,7 @@ from selenium.webdriver.chrome.service import Service
 service = Service()
 options= Options()
 driver_service = Service(executable_path="/usr/bin/chromedriver")
-service.headless = True
+#service.headless = True
 
 class TestWebsiteLoad(unittest.TestCase):
     options.add_argument('--headless')
