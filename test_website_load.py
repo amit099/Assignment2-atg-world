@@ -1,8 +1,10 @@
-import requests
+import unittest
+from selenium import webdriver
 
-def test_atg_website():
-    url = 'https://122#%@#%@$@$@%ghgfhfhghffh!$@#@#/'
-    print(f"Trying to load {url}")
-    response = requests.get(url)
-    assert response.status_code == 200, f'Failed to load {url}'
-    print(f"{url} loaded successfully!")
+class TestWebsiteLoad(unittest.TestCase):
+    # Define a method to test website loading
+    def test_load_website(self):
+        driver = webdriver.Chrome() # Use any browser driver of your choice.
+        driver.get("https://atg.world/")
+        driver.quit()
+
